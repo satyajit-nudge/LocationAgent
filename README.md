@@ -1,6 +1,29 @@
-# agent-backend
+# LocationAgent
 
-This project is a simple API backend server built with Go using the Echo framework. It provides endpoints to manage items.
+A location sharing service with Firebase phone authentication.
+
+## Setup
+
+1. Install dependencies:
+
+```bash
+go mod download
+```
+
+2. Configure Firebase:
+
+- Place your `serviceAccountKey.json` in the `config` directory
+- Set your Firebase Web API Key in environment:
+
+```bash
+export FIREBASE_API_KEY=your_api_key
+```
+
+3. Run tests:
+
+```bash
+go test -v ./src/test/integration_test.go
+```
 
 ## Project Structure
 
@@ -18,27 +41,10 @@ agent-backend
 └── README.md            # Project documentation
 ```
 
-## Setup Instructions
-
-1. **Clone the repository:**
-   ```
-   git clone https://github.com/yourusername/agent-backend.git
-   cd agent-backend
-   ```
-
-2. **Install dependencies:**
-   ```
-   go mod tidy
-   ```
-
-3. **Run the server:**
-   ```
-   go run src/main.go
-   ```
-
 ## Usage
 
 - **Get Items:**
+
   - Endpoint: `GET /items`
   - Description: Retrieves a list of items.
 
